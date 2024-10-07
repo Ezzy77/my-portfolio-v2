@@ -16,9 +16,8 @@ import { ModeToggle } from "@/components/mode-toggle"
 const navItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/projects", label: "Projects" },
-    { href: "/help", label: "Help" },
-    { href: "/dashboard", label: "Dashboard" },
+    { href: "/projects", label: "Project" },
+    { href: "/contact", label: "Contact" },
 ]
 
 export default function Navbar() {
@@ -28,11 +27,10 @@ export default function Navbar() {
     return (
         <nav className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-16 items-center justify-between">
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 px-20">
                     <Link href="/" className="text-xl font-bold">
                         Elisio Cabral Sa
                     </Link>
-                    <span className="text-sm text-muted-foreground">by ECS</span>
                 </div>
                 <div className="flex items-center space-x-2">
                     <div className="hidden md:flex md:items-center md:space-x-2">
@@ -51,9 +49,15 @@ export default function Navbar() {
                             </Link>
                         ))}
                     </div>
-                    <Link href="/signin" className="hidden md:inline-flex">
-                        <Button variant="outline">Sign In</Button>
+                    <Link href="/services" className="hidden md:inline-flex">
+                        <Button variant="outline">Service</Button>
                     </Link>
+                    <Link href="/blogs" className="hidden md:inline-flex">
+                        <Button variant="outline">Blog</Button>
+                    </Link>
+                    {/*<Link href="/signin" className="hidden md:inline-flex">*/}
+                    {/*    <Button variant="outline">Sign In</Button>*/}
+                    {/*</Link>*/}
                     <ModeToggle />
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
                         <SheetTrigger asChild className="md:hidden">
@@ -78,13 +82,13 @@ export default function Navbar() {
                                         {item.label}
                                     </Link>
                                 ))}
-                                <Link
-                                    href="/signin"
-                                    onClick={() => setIsOpen(false)}
-                                    className="text-lg text-muted-foreground"
-                                >
-                                    Sign In
-                                </Link>
+                                {/*<Link*/}
+                                {/*    href="/signin"*/}
+                                {/*    onClick={() => setIsOpen(false)}*/}
+                                {/*    className="text-lg text-muted-foreground"*/}
+                                {/*>*/}
+                                {/*    Sign In*/}
+                                {/*</Link>*/}
                             </nav>
                         </SheetContent>
                     </Sheet>

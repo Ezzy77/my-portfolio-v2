@@ -25,8 +25,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
       >
-          <Navbar/>
-          {children}
+          <div className="flex flex-col min-h-screen">
+              <Navbar />
+              <main className="flex-grow container mx-auto px-8 py-8">
+                  {children}
+              </main>
+              <footer className="container mx-auto px-4 py-6 text-center">
+                  © {new Date().getFullYear()} Elisio Cabral Sa. All rights reserved.
+              </footer>
+          </div>
       </ThemeProvider>
       </body>
       </html>
